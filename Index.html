@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Pro - Dynamic Weather Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="weather-bg" id="weatherBg"></div>
+
+    
+    <div class="container">
+        <div class="weather-card">
+            
+            <div class="search-container">
+                <input type="text" class="search-input" id="locationInput" placeholder="🌍 Enter city name..." value="Colombo">
+                <button class="search-button" id="searchBtn">Search</button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div class="error" id="error">
+                <p id="errorMessage"></p>
+            </div>
+
+            <div id="weatherData" style="display: none;">
+                <div class="time-display" id="timeDisplay"></div>
+                
+                <div class="location-header">
+                    <h1 id="location">Colombo, Sri Lanka</h1>
+                </div>
+
+                <div class="weather-icon" id="weatherIcon">☀️</div>
+                <div class="temperature" id="temperature">--°C</div>
+                <div class="feels-like" id="feelsLike">Feels like --°C</div>
+                <div class="condition" id="condition">Loading...</div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <div class="detail-label">💧 Humidity</div>
+                        <div class="detail-value" id="humidity">--%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">💨 Wind</div>
+                        <div class="detail-value" id="windSpeed">-- km/h</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">☀️ UV Index</div>
+                        <div class="detail-value" id="uvIndex">--</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">👁️ Visibility</div>
+                        <div class="detail-value" id="visibility">-- km</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">🌡️ Pressure</div>
+                        <div class="detail-value" id="pressure">-- mb</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">🌅 Local Time</div>
+                        <div class="detail-value" id="localTime">--:--</div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="fetchWeatherData('London')">London</button>
+                    <button class="quick-btn" onclick="fetchWeatherData('New York')">New York</button>
+                    <button class="quick-btn" onclick="fetchWeatherData('Tokyo')">Tokyo</button>
+                    <button class="quick-btn" onclick="fetchWeatherData('Sydney')">Sydney</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>
